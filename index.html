@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英制螺纹参数识别</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>英制螺纹参数识别</h1>
+        </header>
+
+        <form id="screwForm" class="input-form">
+            <div class="input-group">
+                <label for="diameter">螺纹直径 (mm)</label>
+                <input type="number" 
+                       id="diameter" 
+                       step="0.1" 
+                       min="1" 
+                       max="52" 
+                       placeholder="请输入1-52之间的值"
+                       required>
+            </div>
+
+            <div class="input-group">
+                <label for="pitch">螺距选择 (mm)</label>
+                <select id="pitch" required disabled>
+                    <option value="">请先输入直径</option>
+                </select>
+                <div class="pitch-info">
+                    <span class="unc-info"></span>
+                    <span class="unf-info"></span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="length">螺纹长度 (mm)</label>
+                <input type="number" 
+                       id="length" 
+                       step="0.1" 
+                       min="1" 
+                       max="200" 
+                       placeholder="请输入1-200之间的值"
+                       required>
+            </div>
+
+            <button type="submit" class="identify-btn">识别规格</button>
+        </form>
+
+        <div class="result-section">
+            <div id="resultContent"></div>
+        </div>
+    </div>
+
+    <script src="screws.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
